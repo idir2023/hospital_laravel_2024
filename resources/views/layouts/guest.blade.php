@@ -8,6 +8,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <meta name="theme-color" content="#ffffff">
     @vite('resources/sass/app.scss')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.9.1/font/bootstrap-icons.min.css">
+
 </head>
 <body>
 

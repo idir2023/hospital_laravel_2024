@@ -41,6 +41,7 @@ class User extends Authenticatable implements HasMedia, MustVerifyEmail
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -49,6 +50,26 @@ class User extends Authenticatable implements HasMedia, MustVerifyEmail
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
+
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class);
+    }
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isDoctor()
+    {
+        return $this->role === 'doctor';
+    }
+
+    public function isPatient()
+    {
+        return $this->role === 'patient';
+    }
 }

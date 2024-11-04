@@ -22,12 +22,7 @@
 <body>
     <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
         <div class="sidebar-brand d-none d-md-flex">
-            <svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-                <use xlink:href="{{ asset('icons/brand.svg#full') }}"></use>
-            </svg>
-            <svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-                <use xlink:href="{{ asset('icons/brand.svg#signet') }}"></use>
-            </svg>
+                <img src="{{ asset('img/hospitals_logo.jpg') }}" class="rounded-circle mt-2 mb-2" alt="Hospital Logo" style="width: 120px; height: auto;">
         </div>
         @include('layouts.navigation')
         <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
@@ -53,10 +48,11 @@
 
     <!-- Scripts -->
     @stack('before-scripts')
-
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
     @vite('resources/js/app.js')
+
+    @yield('scripts')
 
     @stack('after-scripts')
     <!-- / Scripts -->
